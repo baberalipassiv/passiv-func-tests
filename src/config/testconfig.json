@@ -1,6 +1,6 @@
 {
   "config": {
-    "hub_base": "http://192.168.1.165/",
+    "hub_base": "http://192.168.1.110//",
     "app_base": "",
     "aws_base": ""
   }

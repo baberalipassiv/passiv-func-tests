@@ -1,5 +1,7 @@
 package common.pojos;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -8,7 +10,8 @@ import java.io.IOException;
 
 public  class DAO {
 
-    protected int responseCode;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    protected Integer responseCode;
     protected String stringJsonResponse;
 
     public String getStringJsonResponse() {
@@ -23,7 +26,7 @@ public  class DAO {
         return this.responseCode;
     }
 
-    public void setResponseCode(int responseCode) {
+    public void setResponseCode(Integer responseCode) {
         this.responseCode = responseCode;
     }
 

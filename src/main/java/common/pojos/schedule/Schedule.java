@@ -1,14 +1,16 @@
 package common.pojos.schedule;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import common.pojos.DAO;
 
 import java.util.ArrayList;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Schedule extends DAO {
 
     String type;
     String uri;
-    int zone;
+    Integer zone;
     String mode;
     ArrayList<Layers> layers;
 
@@ -28,11 +30,11 @@ public class Schedule extends DAO {
         this.uri = uri;
     }
 
-    public int getZone() {
+    public Integer getZone() {
         return zone;
     }
 
-    public void setZone(int zone) {
+    public void setZone(Integer zone) {
         this.zone = zone;
     }
 
@@ -45,11 +47,14 @@ public class Schedule extends DAO {
     }
 
     public ArrayList<Layers> getLayers() {
+
         return layers;
     }
 
     public void setLayers(ArrayList<Layers> layers) {
-        this.layers = layers;
+
+        this.layers = new ArrayList<>();
+        this.layers.addAll(layers);
     }
 
 }

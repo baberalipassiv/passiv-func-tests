@@ -1,11 +1,28 @@
 package common.pojos.schedule;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-import java.util.ArrayList;
-
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Layers extends Schedule{
 
-    ArrayList<Events> week;
+    Event week;
     Override override;
+
+    public Event getWeek() {
+        return week;
+    }
+
+    public void setWeek(Event week) {
+        this.week = week;
+    }
+
+    public Override getOverride() {
+        return override;
+    }
+
+    public void setOverride(Override override) {
+        this.override = override;
+    }
+
+
 }
